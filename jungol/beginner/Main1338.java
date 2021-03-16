@@ -17,7 +17,7 @@ public class Main1338 {
 
         Scanner sc = new Scanner(System.in);
 
-        int i, j, height;
+        int i, j, x, y, height;
         char[][] arr = new char[100][100];
         char c = 'A';
 
@@ -32,9 +32,8 @@ public class Main1338 {
 
         //배열에 값 대입
         for(i=0; i<height; i++) {
-            int x = 1;
-            for(j=i; j<height; j++) {
-                arr[j][height - x++] = c++;
+            for(x=i, y=height-1; x<height; x++, y--) {
+                arr[x][y] = c++;
                 if(c > 'Z') c = 'A';
             }
         }
