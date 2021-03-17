@@ -46,12 +46,12 @@ public class Main2809 {
     그러면 가장 큰/가장 작은 수가 맨 왼쪽/맨 오른쪽 으로 정렬됨.
     맨 왼쪽/맨 오른쪽은 정렬 완료된 상태이므로 이 다음 반복 때는 비교군에서 제외.
 
-    즉, 0 ~ length-1-i 만큼 두 수 비교하여 작은수/큰수를 가장자리로 밀어내는 과정을 0 ~ (length-1) 만큼 반복.
+    즉, length-i(i는 1씩증가) 번 두 수 비교하여 작은수/큰수를 가장자리로 밀어내는 과정을 length-1번 반복.
      */
     public static void ArraySortPrint(int[] arr, int length) {
         int temp, i, j;
         for(i=0; i<length-1; i++) {
-            for(j=0; j<length-1-i; j++) {
+            for(j=0; j<length-1-i; j++) {    //-1 해준건 j와 j+1을 비교하기 위해...(index 범위 out 에러 피하기 위해)
                 if(arr[j] >=  arr[j+1]) {
                     temp = arr[j];
                     arr[j] = arr[j+1];
